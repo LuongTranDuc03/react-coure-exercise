@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 const Wrapper = styled.article`
   background: var(--white);
   box-shadow: var(--shadow-2);

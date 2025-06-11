@@ -55,3 +55,32 @@ import { Link } from 'react-router-dom';
 - `<NavLink> </NavLink>` giống `<Link />` nhưng khác ở điểm là nó tự động thêm 'class' active khi URL hiện tại trùng với 'to', để tranh việc load component lại 1 lần nữa mà không có sự khác biệt gì cả.
 
 - Sử dụng `NavLink` để tạo navbar cho project.
+
+### Tạo components và lưu trữ file 
+
+### 386. CocktailList
+- Lấy dữ liệu từ 'drinks' trong file trình duyệt, dùng .map để trả về từng loại đồ uống
+
+### 387. CocktailCard
+- Trong file CocktailCard.jsx lấy từng thuộc tính của dữ liệu (destructure) đã context và return 
+```js
+<Link to={`/cocktail/${id}`}className='btn'>
+    Details
+  </Link>
+```
+- Trong đoạn trên hướng tới App.js và thay đổi đường dẫn bằng `cocktail/:id`
+
+### 390. 391 Single Cocktail
+- `Cocktail.jsx`
+
+- Trong file trên đầu tiên truy cập vào url
+
+- Tiếp theo lấy dữ liệu API bằng axios
+
+- trong const loader dùng `queryClient.ensureQueryData` để load sẵn dữ liệu (id lấy từ url)
+trả về { id } để cho component dùng
+
+-  Lọc các nguyên liệu (strIngredient1, 2,...) thành 1 mảng validIngredients. Sử dụng keys, map
+
+- Sau đấy hiển thị UI tên, loại, thông tin, nguyên liệu
+
