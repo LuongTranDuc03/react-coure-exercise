@@ -1,6 +1,6 @@
-import Wrapper from "../assets/wrappers/Navbar"
-import {Link, useRouteError} from 'react-router-dom'
-import img from '../assets/not-found.svg';
+import Wrapper from '../assets/wrappers/ErrorPage'
+import { Link, useRouteError } from 'react-router-dom'
+import img from '../assets/not-found.svg'
 
 const Error = () => {
     const error = useRouteError();
@@ -15,6 +15,13 @@ const Error = () => {
                 </div>
             </Wrapper>
     }
+    return (
+      <Wrapper>
+        <div>
+          <h3>something went wrong </h3>
+        </div>
+      </Wrapper>
+    )
 }
 
 export default Error

@@ -82,5 +82,39 @@ trả về { id } để cho component dùng
 
 -  Lọc các nguyên liệu (strIngredient1, 2,...) thành 1 mảng validIngredients. Sử dụng keys, map
 
-- Sau đấy hiển thị UI tên, loại, thông tin, nguyên liệu
+- Sau đấy hiển thị UI tên, loại, thông tin, nguyên liệu...
 
+### 395. React Toastity 
+`main.jsx`
+- Dùng React.StrictMode để kiểm tra lỗi trong dev.
+
+- ToastContainer: để hiển thị các toast thông báo ở trung tâm màn hình (top-center), tự đóng sau 2 giây (autoClose={2000}).
+
+### 396. Newsletter
+#### Tạo form đăng ký Newsletter, gửi dữ liệu lên server, hiển thị thông bá thành công hoặc thất bại rồi redirect về máy chủ
+- Tổng quan: tạo Component Newsletter, tạo Hàm xử lý dữ liệu form action();
+#### action(): 
+- Chuyển formData thành object JS thông thường
+- Gửi dữ liệu đến endpoint `https://www.course-api.com/cocktails-newsletter`
+- Nếu thành công thì gửi thông báo rồi chuyển về trang chủ; nếu lỗi thì hiện lỗi từ server trả về 
+#### Newsletter
+```js
+const isSubmitting = navigation.state === 'submitting';
+```
+- Dòng này kiểm tra xem form có đang được submit không → dùng để hiển thị chữ "submitting..." và disable nút.
+
+```js
+import { action as newsletterAction } from './pages/Newsletter';
+```
+
+- import vào App.jsx và đặt tên mới cho action là newsletterAction
+
+### 402. SearchForm
+- Tạo form tìm kiếm khi nhập vào một loại thức uống
+- `Wrapper` là 1 styled-component wrapper để định dạng lại UI cho form 
+- `Form` Đây là component form tích hợp sẵn trong react-router-dom v6.4+ — cho phép tự động gọi action khi submit.
+- `useNavigation` Hook giúp kiểm tra trạng thái điều hướng, dùng để biết khi nào form đang submit
+- Nếu `navigation.state === 'submitting'`, thì form đang trong quá trình gửi request.
+- Khi đang submit, nút sẽ bị disabled + hiển thị "searching..." để người dùng biết đang xử lý.
+Bình thường thì chỉ hiện "search"
+- Gửi đến action xử lý, fetch data từ API, render lại page.

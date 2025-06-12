@@ -1,6 +1,5 @@
 import { useRouteError } from "react-router-dom"
 
-
 const SingPageError = () => {
     const error = useRouteError();
     console.log(error);

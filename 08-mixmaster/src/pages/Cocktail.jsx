@@ -1,11 +1,10 @@
-import { useLoaderData, Navigate, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import Wrapper from '../assets/wrappers/CocktailPage'
+import { useQuery } from '@tanstack/react-query';
+import Wrapper from '../assets/wrappers/CocktailPage';
+import { useLoaderData, Link } from 'react-router-dom';
+import axios from 'axios';
 
 const singleCocktailUrl =
   'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
-
-import { useQuery } from '@tanstack/react-query'
 
 const singleCocktailQuery = (id) => {
   return {
@@ -56,6 +55,7 @@ const Cocktail = () => {
         </button>
         <h3>{name}</h3>
       </header>
+      
       <div className='drink'>
         <img src={image} alt={name} className='img' />
         <div className='drink-info'>
