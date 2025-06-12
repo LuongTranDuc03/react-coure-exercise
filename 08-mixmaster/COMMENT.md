@@ -118,3 +118,5 @@ import { action as newsletterAction } from './pages/Newsletter';
 - Khi đang submit, nút sẽ bị disabled + hiển thị "searching..." để người dùng biết đang xử lý.
 Bình thường thì chỉ hiện "search"
 - Gửi đến action xử lý, fetch data từ API, render lại page.
+
+## Hiện tại đang có lỗi drinks không phải là mảng, điều này có lẽ là do trong dữ liệu API đang gặp lỗi chứ không phải là do nguồn code
